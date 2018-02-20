@@ -1,0 +1,21 @@
+package com.aimprosoft.task1.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class DispatcherServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println("Dispatcher servlet Get Started");
+           new ServletContext(request, "Get").getHandler().handle(request,response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println("Dispatcher servlet Get Started");
+        new ServletContext(request, "Post").getHandler().handle(request,response);
+    }
+
+}
